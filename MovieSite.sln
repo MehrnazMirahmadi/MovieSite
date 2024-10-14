@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieSite.Web", "MovieSite.Web\MovieSite.Web.csproj", "{0C214DF2-C07B-44DD-ACAD-8C7684FB62DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F59C76FF-8550-4476-B287-FD3527CF66D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{9AE20539-5F76-4A0D-A0BF-677E8F39FC58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Data", "Infra.Data", "{D606962D-5203-400C-BBED-40FA26FE2F53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.IoC", "Infra.IoC", "{807A9968-5F2E-41AB-AC18-01A34E5212EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{43CD87A0-4AF8-45BC-926E-75B719D4A4C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieSite.Application", "MovieSite.Application\MovieSite.Application.csproj", "{20181CFA-8263-4B10-9322-7269F3622DF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieSite.Domain", "MovieSite.Domain\MovieSite.Domain.csproj", "{17BA796F-3FDC-4E35-8E7C-12BDAECFCF53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieSite.Data", "MovieSite.Data\MovieSite.Data.csproj", "{76A8EF98-8E54-4C3A-87C2-AE2C7D1F225E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieSite.IoC", "MovieSite.IoC\MovieSite.IoC.csproj", "{3E8C7FC3-6752-4539-A818-2F21E2CEBF68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C214DF2-C07B-44DD-ACAD-8C7684FB62DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C214DF2-C07B-44DD-ACAD-8C7684FB62DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C214DF2-C07B-44DD-ACAD-8C7684FB62DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C214DF2-C07B-44DD-ACAD-8C7684FB62DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20181CFA-8263-4B10-9322-7269F3622DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20181CFA-8263-4B10-9322-7269F3622DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20181CFA-8263-4B10-9322-7269F3622DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20181CFA-8263-4B10-9322-7269F3622DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BA796F-3FDC-4E35-8E7C-12BDAECFCF53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BA796F-3FDC-4E35-8E7C-12BDAECFCF53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BA796F-3FDC-4E35-8E7C-12BDAECFCF53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BA796F-3FDC-4E35-8E7C-12BDAECFCF53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A8EF98-8E54-4C3A-87C2-AE2C7D1F225E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A8EF98-8E54-4C3A-87C2-AE2C7D1F225E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A8EF98-8E54-4C3A-87C2-AE2C7D1F225E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A8EF98-8E54-4C3A-87C2-AE2C7D1F225E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8C7FC3-6752-4539-A818-2F21E2CEBF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8C7FC3-6752-4539-A818-2F21E2CEBF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8C7FC3-6752-4539-A818-2F21E2CEBF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8C7FC3-6752-4539-A818-2F21E2CEBF68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C214DF2-C07B-44DD-ACAD-8C7684FB62DE} = {43CD87A0-4AF8-45BC-926E-75B719D4A4C8}
+		{20181CFA-8263-4B10-9322-7269F3622DF6} = {F59C76FF-8550-4476-B287-FD3527CF66D9}
+		{17BA796F-3FDC-4E35-8E7C-12BDAECFCF53} = {9AE20539-5F76-4A0D-A0BF-677E8F39FC58}
+		{76A8EF98-8E54-4C3A-87C2-AE2C7D1F225E} = {D606962D-5203-400C-BBED-40FA26FE2F53}
+		{3E8C7FC3-6752-4539-A818-2F21E2CEBF68} = {807A9968-5F2E-41AB-AC18-01A34E5212EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1902B2A-A3E8-4053-95D0-BB05CE1FBC25}
+	EndGlobalSection
+EndGlobal

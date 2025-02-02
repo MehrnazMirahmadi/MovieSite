@@ -1,75 +1,43 @@
-﻿@using MovieSite.Domain.ViewModels.FilmViewModels
-@model FilterFilmViewModel
+﻿@model MovieSite.Domain.Entities.Film
 
 @{
-    ViewData["Title"] = "لیست فیلم‌ها";
+    ViewData["Title"] = "جزئیات فیلم";
 }
 
-<h2 class="mb-4">لیست فیلم‌ها</h2>
+<h2 class="mb-4">جزئیات فیلم - @Model.FilmTitle</h2>
 
-<!-- فرم فیلتر -->
-<form method="get" asp-action="Index" class="mb-3">
+<div class="card shadow-lg p-4">
     <div class="row">
-        <div class="col-md-3">
-            <input type="text" name="FilterTitle" class="form-control" placeholder="عنوان فیلم" value="@Model.FilterTitle" />
+        <div class="col-md-4">
+            <img src="@Model.CoverImage" class="img-fluid rounded" alt="@Model.FilmTitle" />
         </div>
-        <div class="col-md-3">
-            <input type="text" name="FilterDirector" class="form-control" placeholder="کارگردان" value="@Model.FilterDirector" />
-        </div>
-        <div class="col-md-2">
-            <input type="date" name="FilterRegDateFrom" class="form-control" value="@(Model.FilterRegDateFrom?.ToString("yyyy-MM-dd"))" />
-        </div>
-        <div class="col-md-2">
-            <input type="date" name="FilterRegDateTo" class="form-control" value="@(Model.FilterRegDateTo?.ToString("yyyy-MM-dd"))" />
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary">جستجو</button>
+        <div class="col-md-8">
+            <dl class="row">
+                <dt class="col-sm-4">عنوان فیلم:</dt>
+                <dd class="col-sm-8">@Model.FilmTitle</dd>
+
+                <dt class="col-sm-4">مدت زمان:</dt>
+                <dd class="col-sm-8">@Model.Minute دقیقه و @Model.Second ثانیه</dd>
+
+                <dt class="col-sm-4">تعداد لایک:</dt>
+                <dd class="col-sm-8">@Model.LikeCount</dd>
+
+                <dt class="col-sm-4">تعداد بازدید:</dt>
+                <dd class="col-sm-8">@Model.ViewCount</dd>
+
+                <dt class="col-sm-4">تاریخ ثبت:</dt>
+                <dd class="col-sm-8">@Model.RegDate.ToString("yyyy-MM-dd")</dd>
+            </dl>
         </div>
     </div>
-</form>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>تصویر</th>
-            <th>عنوان</th>
-            <th>مدت زمان</th>
-            <th>لایک‌ها</th>
-            <th>بازدیدها</th>
-            <th>عملیات</th>
-        </tr>
-    </thead>
-<tbody>
-        @foreach (var film in Model.Results)
-        {
-            <tr>
-                <td><img src="@film.CoverImage" alt="@film.FilmTitle" class="img-thumbnail" style="width: 70px; height: 70px;" /></td>
-                <td>@film.FilmTitle</td>
-                <td>@film.Minute دقیقه و @film.Second ثانیه</td>
-                <td>@film.LikeCount</td>
-                <td>@film.ViewCount</td>
-                <td>
-                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="loadEditModal('@film.FilmID')">ویرایش</button>
-                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setDeleteFilmId('@film.FilmID')">حذف</button>
-                </td>
-            </tr>
-        }
-</tbody>
-
-</table>
-
-<!-- صفحه‌بندی -->
-<div class="pagination">
-    <ul class="pagination">
-        @for (int i = 1; i <= Model.PageCount; i++)
-        {
-            <li class="page-item @(i == Model.PageId ? "active" : "")">
-                <a class="page-link" href="?pageId=@i">@i</a>
-            </li>
-        }
-    </ul>
+    <div class="mt-4">
+        <!-- دکمه‌های مودال -->
+        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal" onclick="loadEditModal('@Model.FilmID')">ویرایش</button>
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">حذف</button>
+        <a asp-action="Index" class="btn btn-secondary">بازگشت</a>
+    </div>
 </div>
-
 
 <!-- مودال ویرایش -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -81,7 +49,7 @@
             </div>
             <div class="modal-body">
                 <form id="editForm">
-                    <input type="hidden" id="editFilmId" />
+                    <input type="hidden" id="editFilmId" value="@Model.FilmID" />
 
                     <div class="mb-3">
                         <label for="editFilmTitle" class="form-label">عنوان فیلم</label>
@@ -118,7 +86,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">لغو</button>
-                <button type="button" class="btn btn-danger" onclick="deleteFilm()">حذف</button>
+                <button type="button" class="btn btn-danger" onclick="deleteFilm('@Model.FilmID')">حذف</button>
             </div>
         </div>
     </div>
@@ -128,7 +96,7 @@
     <script>
         function loadEditModal(filmId) {
             $.get("/Film/GetFilm/" + filmId, function (data) {
-                $("#editFilmId").val(data.filmID);
+                $("#editFilmId").val(data.id);
                 $("#editFilmTitle").val(data.filmTitle);
                 $("#editMinute").val(data.minute);
                 $("#editCoverImage").val(data.coverImage);
@@ -137,7 +105,7 @@
 
         function saveEdit() {
             var film = {
-                FilmID: $("#editFilmId").val(),
+                Id: $("#editFilmId").val(),
                 FilmTitle: $("#editFilmTitle").val(),
                 Minute: $("#editMinute").val(),
                 CoverImage: $("#editCoverImage").val()
@@ -154,17 +122,12 @@
             });
         }
 
-        var deleteFilmId;
-        function setDeleteFilmId(filmId) {
-            deleteFilmId = filmId;
-        }
-
-        function deleteFilm() {
+        function deleteFilm(filmId) {
             $.ajax({
-                url: "/Film/Delete/" + deleteFilmId,
+                url: "/Film/Delete/" + filmId,
                 type: "POST",
                 success: function () {
-                    location.reload();
+                    location.href = "/Films";
                 }
             });
         }

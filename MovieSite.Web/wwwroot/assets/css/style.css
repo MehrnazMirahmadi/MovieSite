@@ -1,0 +1,571 @@
+
+@font-face {
+  font-family: Vazir;
+  src: url("../fonts/Vazir.woff");
+}
+@font-face {
+  font-family: VazirBold;
+  src: url("../fonts/Vazir-Bold.woff");
+}
+@font-face {
+  font-family: VazirThin;
+  src: url("../fonts/Vazir-Thin.woff");
+}
+@font-face {
+  font-family: VazirLight;
+  src: url("../fonts/Vazir-Light.woff");
+}
+body {
+  font-family: Vazir;
+  direction: rtl;
+}
+.searchBox input{padding: 10px 14px;width: 88%;font-size: 13px;box-sizing: border-box;border-top-right-radius: 7px;border-bottom-right-radius: 7px;background-color: white;border: none;color: #474747;outline: none;margin: 0px !important;float: right}
+.searchBox form{
+  display: flex;box-shadow: 0 2px 2px 1px #0000000f;align-items: center;
+}
+.searchBox span{color: rgb(111, 114, 133);font-size: 13px;padding: 11px 5px;}
+.searchBox i{
+  color: rgb(111, 114, 133);
+  font-size: 13px;
+  padding: 11px 0px;
+}
+.FirstMenuMobile{
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.SecondMenu{
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+.ThirdMenu{
+  position: fixed; z-index: 1000; top: 0;left: 0;right: 0;
+}
+.SecondMenu img{
+  width: 70px;
+  height: 28px;
+  margin-right: 10px;
+}
+.SecondMenu i{
+  color: rgb(111, 114, 133);
+  font-size: 24px;
+  padding-right: 12px;
+  margin-left: 10px;;
+}
+.SecondMenu button{
+  border-color: rgb(5, 163, 232) !important;
+  color: rgb(5, 163, 232) !important;
+  border-radius: 39px;
+  width: 123px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.SecondMenu span{
+margin-left: 9px;
+}
+.login{
+  margin-right: 27px;
+  color: rgb(111, 114, 133);
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.searchBox2{
+  margin-right: 123px;
+}
+.searchBox2 input{padding: 4px 14px;width: 560px;font-size: 13px;box-sizing: border-box;border-top-right-radius: 7px;border-bottom-right-radius: 7px;background-color: white;border: none;color: #474747;outline: none;margin: 0px !important;float: right}
+.searchBox2 form{
+  display: flex;
+  box-shadow: 0 2px 2px 1px #0000000f;
+  align-items: center;
+  width: 428px;
+}
+.searchBox2 span{color: rgb(111, 114, 133);font-size: 13px;padding: 7px 5px;order: 2;}
+.Category{
+  padding: 21px 0px;
+  margin-top: 120px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px 2px #0000001f
+}
+.Category i{
+
+color: rgb(223, 15, 80);
+
+font-size: 26px;
+}
+.CatedoryDes{
+  display: flex;
+  padding: 0px 40px;
+}
+.Category span{
+
+font-size: 14px;
+
+margin-right: 10px;
+
+color: rgb(72, 75, 98);
+}
+.dropdownName a{
+    background-color: white;
+    color: #4e555b;
+    border: 1px solid #232a3129;
+    border-radius: 38px;
+    width: 140px;
+    font-size: 13px;
+    height: 28px;
+    margin: 17px 0px;
+    outline-color: #00000008;
+    font-weight: 600;
+}
+.dropdownName a:hover,:active{
+  color: #4e555b7e;
+  background-color: white;
+}
+.drpDesign{
+  position: absolute;
+will-change: transform;
+top: 0px;
+left: 0px;
+transform: translate3d(400px, -115px, 0px);
+margin-top: 20px;
+height: 400px;
+overflow-y: auto;
+
+}
+.ThirdMenu img{
+  width: 70px;
+  height: 28px;
+  margin-right: 10px;
+}
+.ThirdMenu i{
+  color: rgb(111, 114, 133);
+  font-size: 24px;
+  padding-right: 12px;
+  margin-left: 10px;;
+}
+.ThirdMenu button{
+  border-color: rgb(5, 163, 232) !important;
+  color: rgb(5, 163, 232) !important;
+  border-radius: 39px;
+  width: 123px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.ThirdMenu span{
+margin-left: 9px;
+}
+.BoxContainer{
+
+margin: 45px auto;
+
+width: 69%;
+}
+.BoxName{
+  
+color: rgb(72, 75, 98);
+  
+font-weight: 700;
+}
+.BoxItem{
+
+width: 166px;
+}
+.ImageBox{
+
+height: 244px;
+}
+.ImageBox img{
+  position: relative;
+  z-index: 1000;
+}
+.img1{
+position: relative;
+filter: blur(1px);
+;
+
+}
+.img2{height: 109px;top: -177px;}
+.Time{
+  position: absolute;
+  z-index: 1000;
+  color: ghostwhite;
+  top: 191px;
+  bottom: 0;
+  background-color: black;
+  height: 18px;
+  border-radius: 4px;
+  right: 102px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.Time span{
+  
+padding:  4px;
+}
+.Description{
+  display: flex;
+  flex-direction: column;
+  color: rgb(72, 75, 98);
+  font-size: 12px;
+  font-weight: 700;
+}
+.Description a{
+margin-bottom: 6px;
+color: rgb(72, 75, 98);
+text-decoration: none;
+  }
+.Description a:hover{
+    margin-bottom: 6px;
+    color: rgba(72, 75, 98, 0.798);
+    text-decoration: none;
+}
+.MovieTitle{
+  display: flex;
+  flex-direction: row;
+  color: rgb(111, 114, 133);
+  justify-content: space-between;
+}
+
+.BoxTitle{
+
+display: flex;
+
+justify-content: space-between;
+
+font-size: 13px;
+
+font-weight: 700;
+}
+.showAll{
+  color: rgb(223, 15, 80);
+}
+.showAll:hover{
+  color: rgba(223, 15, 81, 0.746);
+  text-decoration: none;
+}
+
+.BoxName{
+  
+  color: rgb(72, 75, 98);
+    
+  font-weight: 700;
+  }
+  .BoxItemMovies{
+  
+  width: 166px;
+  }
+  .ImageBoxMovies{
+  
+height: 250px;
+  
+width: 212px;
+  }
+  .ImageBoxMovies img{
+    position: relative;
+    z-index: 1000;
+    width: 164px;
+  }
+  .img1Movie{
+  position: relative;
+  filter: blur(1px);
+  ;
+  
+  }
+  .img2Movie{height: 109px;top: -177px;}
+  .TimeMovies{
+    position: absolute;
+    z-index: 1000;
+    color: ghostwhite;
+    top: 191px;
+    bottom: 0;
+    background-color: black;
+    height: 18px;
+    border-radius: 4px;
+    right: 102px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .TimeMovies span{
+    
+  padding:  4px;
+  }
+  .DescriptionMovies{
+    display: flex;
+    flex-direction: column;
+    color: rgb(72, 75, 98);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .DescriptionMovies a{
+  
+margin-bottom: 6px;
+  
+color: rgb(72, 75, 98);
+  
+text-decoration: none;
+  }
+  .DescriptionMovies a:hover{
+  
+    margin-bottom: 6px;
+      
+    color: rgba(72, 75, 98, 0.798);
+      
+    text-decoration: none;
+      }
+  .MovieTitles{
+    display: flex;
+    flex-direction: row;
+    color: rgb(111, 114, 133);
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .asideMenu{
+    display: flex;
+    flex-direction: column;
+    margin-top: -46px;
+    margin-right: 16px;
+    width: 231px;
+    background-color: white;
+    padding: 12px 10px;
+    position: absolute;
+    z-index: 2000;
+    overflow-y: auto;
+    border-radius: 3px;
+    height: 95%;
+  }
+  .menuBox{
+    display: flex;
+    flex-direction: row;
+    color: rgb(72, 75, 98);
+    font-size: 15px;
+    font-weight:bolder;
+    margin-top: 20px;
+    margin-bottom: 11px;
+  }
+  .headerSideMenu{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 3px 2px 2px #0000000d;
+  }
+  .menuBox i{
+
+margin-right: 7px;
+
+}
+  .menuBox span{
+
+margin-right: 25px;
+
+}
+  .moreSection{
+    color: rgb(223, 15, 80);
+    font-weight: 700;
+    margin-right: 10px;
+    margin-top: 23px;
+    font-size: 15px;
+  }
+
+  .asideMenu2{
+    display: none;
+    flex-direction: column;
+    margin-top: -46px;
+    margin-right: 16px;
+    width: 231px;
+    background-color: white;
+    padding: 12px 10px;
+    position: absolute;
+    z-index: 2000;
+    overflow-y: auto;
+    border-radius: 3px;
+    height: 300px;
+  }
+
+  .MovieBoxDetails{
+    margin: 154px auto;width: 90%;
+  }
+  .VideoStyle{
+    width: 100%;
+  }
+  .MovieNameDetails{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .MovieNameDetails-spn1{
+    margin: 31px 0px;font-size: 28px;font-weight: 700;
+  }
+  .MovieNameDetails-spn2{
+    color: rgb(111, 114, 133);
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .shareToAll{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shareToAll i{
+    color:rgb(111, 114, 133);
+  }
+  .FilimoBox{
+    display: flex;flex-direction: row;align-items: center;width: 100%;justify-content: space-between;margin-top: 35px;
+  }
+  .FilimoBoxDescription{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .FilimoBoxDescription div{
+    display: flex;
+    flex-direction: column;
+    margin-right: 13px;
+  }
+  .FilimoBoxDescriptionSpn1{
+    color: rgb(72, 75, 98);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .FilimoBoxDescriptionSpn2{
+    font-size: 10px; color: rgb(72, 75, 98);
+  }
+  .btnBuy{
+    
+font-size: 12px;
+    
+font-weight: 600;
+    
+width: auto;
+  }
+  .About{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: 35px;
+  }
+  .About span{
+    color: rgb(72, 75, 98);
+    font-weight: 700;
+  }
+  .About p{
+    color: rgb(111, 114, 133);
+    line-height: 1.5;
+    margin-top: 18px;
+    width: 80%;
+  }
+  .Abrevation{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: 35px;
+  }
+  .Abrevation span{
+    color: rgb(72, 75, 98);
+    font-weight: 700;
+  }
+  .Abrevation p{
+    color: rgb(111, 114, 133);
+    line-height: 1.5;
+    margin-top: 18px;
+    width: 80%;
+  }
+  .moreDetails{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  .moreDetailsItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .moreDetailsSpn1{
+    color: rgb(111, 114, 133);
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 65px;
+  }
+  .moreDetailsSpn2{
+    color: rgb(72, 75, 98);
+    font-size: 14px;
+  }
+
+
+@media screen and (max-width:577px){
+ .SecondMenu{display: none;}
+ .CatedoryDes{display: flex;flex-direction: column;align-items: center;}
+ .ThirdMenu{display: none;}
+ .gridContainer{
+  display: grid;
+  grid-template-columns: auto ;
+  justify-content: space-between;
+  height: 400px;
+  gap: 20px;
+}
+.asideMenu{display: none;}
+}              
+@media screen and (min-width:577px) and (max-width:767px){
+ .SecondMenu{display: none;}
+ .FirstMenuMobile{display: none;}
+ .ThirdMenu{display: flex;z-index: 3003;background-color: white;}
+ .CatedoryDes{display: flex;flex-direction: column;}
+ .gridContainer{
+  display: grid;
+  grid-template-columns: auto auto ;
+  justify-content: space-between;
+  height: 400px;
+  gap: 20px;
+}
+}
+@media screen and (min-width:768px) and (max-width:992px){
+  .FirstMenuMobile{display: none;}
+  .ThirdMenu{display: flex;z-index: 3000;background-color: white;}
+  .SecondMenu{display: none;}
+  .searchBox2{display: none;}
+  .CatedoryDes{display: flex;flex-direction: column;}
+  .gridContainer{
+    display: grid;
+    grid-template-columns: auto auto ;
+    justify-content: space-between;
+    height: 400px;
+    gap: 20px;
+  }
+}
+@media screen and (min-width:993px) and (max-width:1200px){
+  .FirstMenuMobile{display: none;}
+  .CatedoryDes{display: flex;flex-direction: row;align-items: center;}
+  .ThirdMenu{display: none;}
+  .gridContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: space-between;
+    height: 400px;
+  }
+}
+@media screen and (min-width:1200px){
+  .FirstMenuMobile{display: none;}
+  .CatedoryDes{display: flex;flex-direction: row;align-items: center;padding: 0px 310px;}
+  .ThirdMenu{display: none;}
+  .gridContainer{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+    gap: 51px;
+    height: 400px;
+    margin-top: 16px;
+  }
+}

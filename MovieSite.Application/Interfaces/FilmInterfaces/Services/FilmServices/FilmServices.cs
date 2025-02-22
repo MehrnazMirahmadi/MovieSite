@@ -1,10 +1,9 @@
-﻿using MovieSite.Application.Interfaces.FilmInterfaces;
-using MovieSite.Domain.Entities;
+﻿using MovieSite.Domain.Entities;
 using MovieSite.Domain.Interfaces;
 using MovieSite.Domain.Interfaces.FilmInterfaces;
 using MovieSite.Domain.ViewModels.FilmViewModels;
 
-namespace MovieSite.Application.Services.FilmServices
+namespace MovieSite.Application.Interfaces.FilmInterfaces.Services.FilmServices
 {
     public class FilmServices : IFilmServices
     {
@@ -20,6 +19,11 @@ namespace MovieSite.Application.Services.FilmServices
         public async Task<FilterFilmViewModel> GetFilterFilm(FilterFilmViewModel filter)
         {
             return await _filmRepository.FilterFilm(filter);
+        }
+
+        public Task<FilterFilmViewModel> GetSpecialFilm(FilterFilmViewModel filter)
+        {
+            throw new NotImplementedException();
         }
     }
 

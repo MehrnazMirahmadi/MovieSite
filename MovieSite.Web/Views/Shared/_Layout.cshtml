@@ -1,50 +1,102 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MovieSite.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-  
-    <link rel="stylesheet" href="~/MovieSite.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link href="~/assets/OwlCarousel2-2.3.4/docs/assets/owlcarousel/owl.carousel.min.js" rel="stylesheet" />
+    <script src="~/assets/js/jquery-3.7.0.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <title>آپارات-شرویش اشتراک ویدیو</title>
+    <link rel="icon" href="~/assets/AparatImages/Logo.webp" type="image/webp">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieSite.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <!-- AsideMenu -->
+    <partial name="_RightSidebar" />
+    <!-- MobileMenu -->
+    <partial name="_MainMenu" />
+    <!-- Main Menu -->
+   
+    <!-- ThirdMenu -->
+   @*  <div class="container-fluid ThirdMenu">
+        <div class="row mt-4 ">
+            <div class="col-6 d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                    <i onclick="toggolmenu('nav-icon2')" id="nav-icon2" style="padding-left: 10px;" class="fa fa-bars " aria-hidden="true"></i>
+                    <img src="AparatImages/Aparat-Logo-LimooGraphic.png" alt="">
+                    <i class="fa fa-video-camera" aria-hidden="true"></i>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - MovieSite.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="col-6 d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                    <button type="button" class="btn btn-outline-info">
+                        <span class="fa fa-plus" aria-hidden="true"></span>
+                        بارگذاری ویدیو
+                    </button>
+                    <div class="login">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        ورود
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+    <!-- Category -->
+    <div class="container-fluid Category">
+        <div class="row CatedoryDes">
+            <div class="col-6 d-flex align-items-start">
+                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                <span>سریال و فیلم های سینمایی</span>
+            </div>
+
+            <div class="col-6">
+                <div class="dropdown show dropdownName">
+                    <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ژانر و دسته بندی
+                    </a>
+                    <div class="dropdown-menu drpDesign" aria-labelledby="dropdownMenuLink">
+                        <a style="border: none;" class="dropdown-item" href="#">فیلیمو کودک</a>
+                        <a style="border: none;" class="dropdown-item" href="#">ایرانی</a>
+                        <a style="border: none;" class="dropdown-item" href="#">اکشن</a>
+                        <a style="border: none;" class="dropdown-item" href="#">کمدی</a>
+                        <a style="border: none;" class="dropdown-item" href="#">وحشت</a>
+                        <a style="border: none;" class="dropdown-item" href="#">انیمینشن</a>
+                        <a style="border: none;" class="dropdown-item" href="#">علمی تخیلی</a>
+                        <a style="border: none;" class="dropdown-item" href="#">تاک شو</a>
+                        <a style="border: none;" class="dropdown-item" href="#">جنایی</a>
+                        <a style="border: none;" class="dropdown-item" href="#">عاشقانه</a>
+                        <a style="border: none;" class="dropdown-item" href="#">درام</a>
+                        <a style="border: none;" class="dropdown-item" href="#">ماجراجویی</a>
+                        <a style="border: none;" class="dropdown-item" href="#">رازآلود</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> *@
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+    <!-- Box1 -->
+   
+    <!-- Box2 -->
+   
+    <!-- Box3-->
+   
+    <!-- script -->
+    <script src="~/assets/OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="~/assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="/assets/js/AparatScript.js"> </script>
+ 
+
+</body>
+</html>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MovieSite.Application.Interfaces.FilmInterfaces;
-using MovieSite.Application.Services.FilmServices;
+using MovieSite.Application.Interfaces.FilmInterfaces.Services.FilmServices;
 using MovieSite.Data.Repository;
 using MovieSite.Data.Repository.Box;
 using MovieSite.Data.Repository.FilmRepository;

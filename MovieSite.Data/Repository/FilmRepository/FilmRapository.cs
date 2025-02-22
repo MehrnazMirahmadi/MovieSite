@@ -10,7 +10,7 @@ namespace MovieSite.Data.Repository.FilmRepository
 {
     public class FilmRepository : IRepository<Film>, IFilmRepository
     {
-        private readonly MovieDbContext _context; 
+        private readonly MovieDbContext _context;
 
         public FilmRepository(MovieDbContext context)
         {
@@ -19,16 +19,16 @@ namespace MovieSite.Data.Repository.FilmRepository
 
         public async Task AddAsync(Film entity)
         {
-            await _context.Films.AddAsync(entity); 
+            await _context.Films.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var film = await _context.Films.FindAsync(id); 
+            var film = await _context.Films.FindAsync(id);
             if (film != null)
             {
-                _context.Films.Remove(film); 
+                _context.Films.Remove(film);
                 await _context.SaveChangesAsync();
             }
         }
@@ -72,13 +72,13 @@ namespace MovieSite.Data.Repository.FilmRepository
 
         public async Task<Film> GetByIdAsync(int id)
         {
-            return await _context.Films.FindAsync(id); 
+            return await _context.Films.FindAsync(id);
         }
 
         public async Task UpdateAsync(Film entity)
         {
-            _context.Films.Update(entity); 
-            await _context.SaveChangesAsync(); 
+            _context.Films.Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -3,8 +3,9 @@
 
 @{
     ViewData["Title"] = "لیست فیلم‌ها";
+   
 }
-
+<div class="container m-3">
 <h2 class="mb-4">لیست فیلم‌ها</h2>
 
 <!-- فرم فیلتر -->
@@ -72,7 +73,7 @@
 
 
 <!-- مودال ویرایش -->
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal fade mt-4" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -106,7 +107,7 @@
 </div>
 
 <!-- مودال حذف -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade mt-4" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -123,7 +124,7 @@
         </div>
     </div>
 </div>
-
+</div>
 @section Scripts {
     <script>
         function loadEditModal(filmId) {

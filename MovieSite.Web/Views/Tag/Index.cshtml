@@ -1,0 +1,44 @@
+﻿@using MovieSite.Domain.ViewModels.TagsViewModel
+@model FilterTagViewModel
+
+@{
+    ViewData["Title"] = "لیست تگ‌ها";
+}
+<div class="container m-3">
+    <h2 class="mb-4">لیست تگ‌ها</h2>
+
+    <form method="get" asp-action="Index" class="mb-3">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" name="filterTitle" class="form-control" placeholder="عنوان تگ" value="@Model.FilterTag" />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary">فیلتر</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tag ID</th>
+                <th>Tag Text</th>
+                <th>Reg Date</th>
+                <th>Registering User ID</th>
+                <th>Approval User ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tag in Model.Results)
+            {
+                <tr>
+                    <td>@tag.TagID</td>
+                    <td>@tag.TagText</td>
+                    <td>@tag.RegDate</td>
+                    <td>@tag.RegisteringUserID</td>
+                    <td>@tag.ApprovalUserID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

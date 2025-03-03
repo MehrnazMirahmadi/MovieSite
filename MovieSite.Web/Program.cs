@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using MovieSite.IoC;
 
 
@@ -11,10 +12,34 @@ RegisterServices(builder.Services);
 
 #region DB
 string ConnectionString = builder.Configuration["ConnectionString:MovieDbConnection"].ToString();
-MovieSite.BootStrap.BootStrap.WireUP(builder.Services, ConnectionString); 
+string SecurityConnection = builder.Configuration["ConnectionString:SecurityConnectionString"].ToString();
+MovieSite.BootStrap.BootStrap.WireUP(builder.Services, ConnectionString, SecurityConnection);
 #endregion
 
+#region Identity
+// Configure Identity
+builder.Services.AddIdentity<Security.ApplicationUser, Security.ApplicationRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Lockout.MaxFailedAccessAttempts = 10;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+})
+.AddEntityFrameworkStores<Security.SecurityContext>()
+.AddDefaultTokenProviders();
 
+// Configure Authentication cookie for Forms Authentication
+builder.Services.ConfigureApplicationCookie(options =>
+{
+
+    options.Cookie.Name = ".MyAuthCookie";// ‰«„ òÊò?
+    options.Cookie.HttpOnly = true; // òÊò? ›ﬁÿ »—«? HTTP «” 
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30); // „œ  “„«‰ «‰ﬁ÷«
+    options.SlidingExpiration = true; //  „œ?œ “„«‰ «‰ﬁ÷« »Â ’Ê—  ŒÊœò«—
+    options.LoginPath = "/Account/Login"; // „”?— ’›ÕÂ Ê—Êœ
+    options.LogoutPath = "/Account/Logout"; // „”?— ’›ÕÂ Œ—ÊÃ
+    options.AccessDeniedPath = "/Account/AccessDenied"; // „”?— œ” —”? „„‰Ê⁄
+});
+#endregion
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

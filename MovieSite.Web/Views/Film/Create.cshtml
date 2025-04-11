@@ -1,0 +1,64 @@
+﻿@model MovieSite.Domain.Entities.Film
+
+@{
+    Layout = null; // چون داخل مودال لود میشه
+}
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <div class="modal-body">
+        <div class="mb-3">
+            <label asp-for="FilmTitle" class="form-label">عنوان فیلم</label>
+            <input asp-for="FilmTitle" class="form-control" />
+            <span asp-validation-for="FilmTitle" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Minute" class="form-label">مدت زمان (دقیقه)</label>
+            <input asp-for="Minute" class="form-control" type="number" />
+            <span asp-validation-for="Minute" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Second" class="form-label">مدت زمان (ثانیه)</label>
+            <input asp-for="Second" class="form-control" type="number" />
+            <span asp-validation-for="Second" class="text-danger"></span>
+        </div>
+
+     @*    <div class="mb-3">
+            <label asp-for="Director" class="form-label">کارگردان</label>
+            <input asp-for="Director" class="form-control" />
+            <span asp-validation-for="Director" class="text-danger"></span>
+        </div> *@
+
+        <div class="mb-3">
+            <label asp-for="CoverImage" class="form-label">آدرس تصویر کاور</label>
+            <input asp-for="CoverImage" class="form-control" />
+            <span asp-validation-for="CoverImage" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="LikeCount" class="form-label">تعداد لایک</label>
+            <input asp-for="LikeCount" class="form-control" type="number" />
+            <span asp-validation-for="LikeCount" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ViewCount" class="form-label">تعداد بازدید</label>
+            <input asp-for="ViewCount" class="form-control" type="number" />
+            <span asp-validation-for="ViewCount" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-success">ذخیره</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,33 @@
+﻿@model MovieSite.Domain.Entities.Tag
+
+@{
+    ViewData["Title"] = "جزئیات تگ";
+}
+
+<h2>جزئیات تگ</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>شناسه تگ (TagID)</th>
+        <td>@Model.TagID</td>
+    </tr>
+    <tr>
+        <th>متن تگ (TagText)</th>
+        <td>@Model.TagText</td>
+    </tr>
+    <tr>
+        <th>تاریخ ثبت (RegDate)</th>
+        <td>@Model.RegDate.ToString("yyyy/MM/dd HH:mm")</td>
+    </tr>
+    <tr>
+        <th>ثبت‌کننده (RegisteringUserID)</th>
+        <td>@Model.RegisteringUserID</td>
+    </tr>
+    <tr>
+        <th>تأییدکننده (ApprovalUserID)</th>
+        <td>@Model.ApprovalUserID</td>
+    </tr>
+</table>
+
+<a asp-action="Edit" asp-route-id="@Model.TagID" class="btn btn-warning">ویرایش</a>
+<a asp-action="Index" class="btn btn-secondary">بازگشت</a>

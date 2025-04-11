@@ -41,17 +41,17 @@ namespace MovieSite.Web.Controllers
         }
 
 
-        //[HttpPost]
+        [HttpPost]
         //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create(Film film)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        await _filmRepository.AddAsync(film);
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(film);
-        //}
+        public async Task<IActionResult> Create(Film film)
+        {
+            if (ModelState.IsValid)
+            {
+                await _filmRepository.AddAsync(film);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(film);
+        }
 
         //public async Task<IActionResult> Edit(int id)
         //{
